@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import config from "./contactConfig";
 import siteConfig from "../siteConfig";
 
@@ -36,7 +37,7 @@ export default function ContactPage() {
     const data = await res.json();
 
     if (data.success) {
-      alert("Message sent successfully!");
+      alert(config.successMessage);
 
       setForm({
         firstName: "",
@@ -48,7 +49,7 @@ export default function ContactPage() {
         message: "",
       });
     } else {
-      alert("Something went wrong.");
+      alert(config.errorMessage);
     }
   };
 
@@ -67,11 +68,20 @@ export default function ContactPage() {
     >
       <div className={`mx-auto ${siteConfig.maxWidth}`}>
         <header className="mb-10">
-          <h1 className="text-4xl font-bold">{config.pageTitle}</h1>
+          <h1 className="text-4xl font-bold">
+            {config.pageTitle}
+          </h1>
 
           <p className="text-gray-600 mt-2">
             {config.subtitle}
           </p>
+
+          <Link
+            href="/"
+            className="inline-block mt-4 text-blue-600 underline"
+          >
+            Back to Home
+          </Link>
         </header>
 
         <section className="mb-10 space-y-2">
@@ -80,6 +90,7 @@ export default function ContactPage() {
           </h2>
 
           <p>📞 {config.phone}</p>
+
           <p>📧 {config.email}</p>
 
           {config.address && (
@@ -97,6 +108,7 @@ export default function ContactPage() {
             className="flex flex-col gap-4 max-w-xl"
           >
             <input
+              required
               name="firstName"
               placeholder="First Name"
               onChange={handleChange}
@@ -105,6 +117,7 @@ export default function ContactPage() {
             />
 
             <input
+              required
               name="lastName"
               placeholder="Last Name"
               onChange={handleChange}
@@ -113,6 +126,7 @@ export default function ContactPage() {
             />
 
             <input
+              required
               name="contact"
               placeholder="Email or Phone"
               onChange={handleChange}
@@ -149,6 +163,7 @@ export default function ContactPage() {
             />
 
             <textarea
+              required
               name="message"
               placeholder="Message"
               onChange={handleChange}
