@@ -1,4 +1,5 @@
 import { Resend } from "resend";
+import emailConfig from "@/app/contact/emailConfig";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -18,8 +19,10 @@ export async function POST(req) {
 
     await resend.emails.send({
       from: "Contact Form <onboarding@resend.dev>",
-      to: ["YOUR_EMAIL_HERE"],
+      to: [emailConfig.recipientEmail],
+
       subject: `New Contact Form Submission from ${firstName} ${lastName}`,
+
       html: `
         <h2>New Contact Form Submission</h2>
 
@@ -31,15 +34,27 @@ export async function POST(req) {
         <p><b>Message:</b> ${message || "N/A"}</p>
 
         <hr />
-        <p><i>This message was sent from your website contact form.</i></p>
+
+        <p>
+          <i>
+            This message was sent from your website contact form.
+          </i>
+        </p>
       `,
     });
 
-    return Response.json({ success: true });
+    return Response.json({
+      success: true,
+    });
   } catch (error) {
     return Response.json(
-      { success: false, error: error.message },
-      { status: 500 }
+      {
+        success: false,
+        error: error.message,
+      },
+      {
+        status: 500,
+      }
     );
   }
 }
