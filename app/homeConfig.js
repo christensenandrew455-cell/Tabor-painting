@@ -16,10 +16,35 @@ const config = {
   secondaryColor: "gray-200",
 
   // HERO
-  slogan: "Your Slogan Here",
-  companyStory: "Your company story goes here...",
-  mission: "Your mission goes here...",
-  whyChooseUs: "Why customers should choose you...",
+  heroTitle: "YOUR BUSINESS NAME",
+  heroSubtitle: "Professional Service You Can Trust",
+
+  heroUseImage: true,
+
+  heroImage:
+    "https://images.unsplash.com/photo-1504307651254-35680f356dfd",
+
+  heroBackgroundColor: "bg-blue-600",
+
+  // ABOUT
+  companyStory:
+    "Tell visitors who you are, how long you've been in business, and what makes your company different.",
+
+  mission:
+    "Provide reliable, high-quality service while putting customers first.",
+
+  whyChooseUs:
+    "Experienced, dependable, fully committed to customer satisfaction, and focused on delivering quality results every time.",
+
+  // SERVICE AREAS
+  serviceAreas: [
+    "Town 1",
+    "Town 2",
+    "Town 3",
+    "Town 4",
+    "Town 5",
+    "Town 6",
+  ],
 
   // MEDIA
   images: [
