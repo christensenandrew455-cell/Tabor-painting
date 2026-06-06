@@ -28,7 +28,6 @@ export default function Home() {
           `}
         >
           <div className="max-w-7xl mx-auto grid grid-cols-3 items-center">
-            {/* LEFT */}
             <div>
               {config.logoUrl && (
                 <img
@@ -39,14 +38,12 @@ export default function Home() {
               )}
             </div>
 
-            {/* CENTER */}
             <div className="text-center">
               <h1 className="text-2xl font-bold">
                 {config.businessName}
               </h1>
             </div>
 
-            {/* RIGHT */}
             <div className="flex justify-end">
               <Link
                 href={siteConfig.contactPageRoute}
@@ -62,28 +59,89 @@ export default function Home() {
       <div
         className={`mx-auto ${siteConfig.maxWidth} ${siteConfig.pagePadding}`}
       >
-        <section className="space-y-4">
-          <h1 className="text-4xl font-bold">
-            {config.slogan}
-          </h1>
+        {/* HERO */}
+        <section
+          className={`relative overflow-hidden rounded-2xl mb-12 ${
+            !config.heroUseImage
+              ? config.heroBackgroundColor
+              : ""
+          }`}
+        >
+          {config.heroUseImage && (
+            <>
+              <img
+                src={config.heroImage}
+                alt={config.businessName}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+
+              <div className="absolute inset-0 bg-black/50" />
+            </>
+          )}
+
+          <div className="relative z-10 px-8 py-28 text-center text-white">
+            <h1 className="text-5xl font-bold">
+              {config.heroTitle}
+            </h1>
+
+            <p className="text-xl mt-4 max-w-3xl mx-auto">
+              {config.heroSubtitle}
+            </p>
+
+            <Link
+              href={siteConfig.contactPageRoute}
+              className="inline-block mt-8 bg-white text-black px-8 py-4 rounded-xl font-semibold"
+            >
+              {config.contactButtonText}
+            </Link>
+          </div>
+        </section>
+
+        {/* ABOUT */}
+        <section className="mb-12">
+          <h2 className="text-3xl font-bold mb-4">
+            About Us
+          </h2>
 
           <p>{config.companyStory}</p>
 
-          <h2 className="text-2xl font-semibold mt-6">
-            Mission
-          </h2>
+          <h3 className="text-2xl font-semibold mt-6">
+            Our Mission
+          </h3>
 
           <p>{config.mission}</p>
+        </section>
 
-          <h2 className="text-2xl font-semibold mt-6">
+        {/* SERVICE AREAS */}
+        <section className="mb-12">
+          <h2 className="text-3xl font-bold mb-4">
+            Areas We Service
+          </h2>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            {config.serviceAreas.map((area, i) => (
+              <div
+                key={i}
+                className="border rounded-xl p-4 text-center shadow-sm"
+              >
+                {area}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* WHY CHOOSE US */}
+        <section className="mb-12">
+          <h2 className="text-3xl font-bold mb-4">
             Why Choose Us
           </h2>
 
           <p>{config.whyChooseUs}</p>
         </section>
 
+        {/* OUR WORK */}
         <section className="mt-10">
-          <h2 className="text-2xl font-bold mb-4">
+          <h2 className="text-3xl font-bold mb-4">
             Our Work
           </h2>
 
@@ -107,8 +165,9 @@ export default function Home() {
           )}
         </section>
 
+        {/* TESTIMONIALS */}
         <section className="mt-10 bg-gray-50 p-6 rounded-xl">
-          <h2 className="text-2xl font-bold mb-4">
+          <h2 className="text-3xl font-bold mb-4">
             Testimonials
           </h2>
 
