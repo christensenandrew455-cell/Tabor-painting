@@ -5,7 +5,6 @@ const config = {
 
   phone: "YOUR PHONE NUMBER",
   email: "YOUR EMAIL",
-  address: "YOUR ADDRESS",
 
   primaryColor: "blue-600",
   font: "font-sans",
