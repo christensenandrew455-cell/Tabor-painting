@@ -75,7 +75,7 @@ export default function ContactPage() {
           <p>
             <strong>Email:</strong> {config.email}
           </p>
-          )}
+          )
         </div>
 
         <form
