@@ -8,7 +8,6 @@ const config = {
   logoUrl: "",
 
   // BUTTONS
-  callButtonText: "Call Now",
   contactButtonText: "Contact Us",
 
   // STYLE
