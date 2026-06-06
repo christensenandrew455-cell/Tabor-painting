@@ -1,75 +1,78 @@
 const config = {
-  // BUSINESS INFO
-  businessName: "Bobs landwork",
-  phone: "(999)-999-9999",
-  email: "bob@email.com",
+// BUSINESS INFO
+businessName: "Bobs Landwork",
+phone: "(999)-999-9999",
+email: "[bob@email.com](mailto:bob@email.com)",
 
-  // BRANDING
-  logoUrl: "",
+// BRANDING
+logoUrl: "",
 
-  // BUTTONS
-  contactButtonText: "Contact Us",
+// BUTTONS
+contactButtonText: "Contact Us",
 
-  // STYLE
-  font: "font-sans",
-  primaryColor: "blue-600",
-  secondaryColor: "gray-200",
+// STYLE
+font: "font-sans",
+primaryColor: "blue-600",
+secondaryColor: "gray-200",
 
-  // HERO
-  heroTitle: "Bobs landwork",
-  heroSubtitle: "Professional Service You Can Trust",
+// HERO
+heroTitle: "Bob's Landwork",
 
-  heroUseImage: true,
+heroSubtitle:
+"Reliable Land Clearing and Property Services Throughout Central Massachusetts",
 
-  heroImage:
-    "https://images.unsplash.com/photo-1504307651254-35680f356dfd",
+heroUseImage: true,
 
-  heroBackgroundColor: "bg-blue-600",
+heroImage:
+"https://images.unsplash.com/photo-1504307651254-35680f356dfd",
 
-  // ABOUT
-  companyStory:
-    "Tell visitors who you are, how long you've been in business, and what makes your company different.",
+heroBackgroundColor: "bg-blue-600",
 
-  mission:
-    "Provide reliable, high-quality service while putting customers first.",
+// ABOUT
+companyStory:
+"Bob's Landwork provides professional land clearing, excavation, property cleanup, and site preparation services throughout Central Massachusetts. We take pride in delivering dependable work, honest communication, and quality results for every customer.",
 
-  whyChooseUs:
-    "Experienced, dependable, fully committed to customer satisfaction, and focused on delivering quality results every time.",
+mission:
+"Our goal is to help property owners improve and maintain their land with safe, efficient, and affordable services.",
 
-  // SERVICE AREAS
-  serviceAreas: [
-    "central mass",
-  ],
+// WHY CHOOSE US
+whyChooseUs:
+"Experienced, dependable, fully committed to customer satisfaction, and focused on delivering quality results every time.",
 
-  // MEDIA
-  images: [
-    "https://via.placeholder.com/400",
-    "https://via.placeholder.com/400",
-    "https://via.placeholder.com/400",
-  ],
+// SERVICE AREAS
+serviceAreas: [
+"Central Massachusetts",
+],
 
-  video: "",
+// MEDIA
+images: [
+"https://via.placeholder.com/400",
+"https://via.placeholder.com/400",
+"https://via.placeholder.com/400",
+],
 
-  // TESTIMONIALS
-  testimonials: [
-    {
-      name: "John",
-      stars: 5,
-      review: "Amazing service!",
-    },
-    {
-      name: "Sarah",
-      stars: 5,
-      review: "Highly recommend!",
-    },
-    {
-      name: "Mike",
-      stars: 4,
-      review: "Great experience!",
-    },
-  ],
+video: "",
 
-  googleReviewsLink: "hey man",
+// TESTIMONIALS
+testimonials: [
+{
+name: "John",
+stars: 5,
+review: "Amazing service!",
+},
+{
+name: "Sarah",
+stars: 5,
+review: "Highly recommend!",
+},
+{
+name: "Mike",
+stars: 4,
+review: "Great experience!",
+},
+],
+
+googleReviewsLink: "",
 };
 
 export default config;
