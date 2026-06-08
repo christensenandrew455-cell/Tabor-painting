@@ -1,5 +1,5 @@
 const siteConfig = {
-  // HEADER
+  // HEADER CONFIGURATION
   showHeader: true,
   stickyHeader: true,
 
