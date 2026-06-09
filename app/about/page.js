@@ -5,7 +5,7 @@ import aboutConfig from "../aboutConfig";
 
 export default function AboutPage() {
   return (
-    <main className={`${config.font} text-gray-900`}>
+    <main className={`${config.font} text-gray-900 bg-gray-100`}>
       {siteConfig.showHeader && (
         <header
           className={`
@@ -21,6 +21,7 @@ export default function AboutPage() {
           `}
         >
           <div className="max-w-7xl mx-auto flex items-center justify-between">
+            {/* Logo & Business Name */}
             <div className="flex items-center gap-3">
               {config.showLogo && config.logoUrl && (
                 <img
@@ -37,8 +38,9 @@ export default function AboutPage() {
               </h1>
             </div>
 
+            {/* Navigation */}
             {config.showNavLinks && (
-              <nav className="hidden md:flex items-center gap-4">
+              <nav className="hidden md:flex items-center gap-6 ml-auto">
                 {config.headerLinks.map((link) => (
                   <Link
                     key={link.name}
@@ -57,36 +59,34 @@ export default function AboutPage() {
                 ))}
               </nav>
             )}
-
-            <Link
-              href={siteConfig.contactPageRoute}
-              className={`
-                px-5
-                py-2
-                rounded-lg
-                transition
-                font-medium
-                ${config.headerButtonBg}
-                ${config.headerButtonHover}
-                ${config.headerButtonText}
-              `}
-            >
-              {config.contactButtonText}
-            </Link>
           </div>
         </header>
       )}
 
       <div className="max-w-7xl mx-auto p-6 md:p-12">
-        <h1 className="text-5xl font-bold text-center mb-16">
-          {aboutConfig.pageTitle}
-        </h1>
+        {/* PAGE HEADER */}
+        <div className="text-center mb-20">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6">
+            {aboutConfig.pageTitle}
+          </h1>
+        </div>
 
-        <div className="space-y-20">
+        {/* ABOUT SECTIONS */}
+        <div className="space-y-12">
           {aboutConfig.sections.map((section, index) => (
             <section
               key={section.title}
-              className="grid md:grid-cols-2 gap-10 items-center"
+              className="
+                grid md:grid-cols-2
+                gap-10
+                items-center
+                bg-white
+                p-8
+                md:p-12
+                rounded-3xl
+                shadow-lg
+                border
+              "
             >
               <div
                 className={
@@ -99,7 +99,7 @@ export default function AboutPage() {
                   {section.title}
                 </div>
 
-                <p className="text-lg leading-relaxed">
+                <p className="text-lg leading-relaxed text-gray-700">
                   {section.content}
                 </p>
               </div>
@@ -114,13 +114,14 @@ export default function AboutPage() {
                 <img
                   src={section.image}
                   alt={section.title}
-                  className="w-full rounded-2xl shadow-lg"
+                  className="w-full rounded-3xl shadow-lg"
                 />
               </div>
             </section>
           ))}
         </div>
 
+        {/* CTA */}
         <section className="text-center mt-20">
           <Link
             href={siteConfig.contactPageRoute}
@@ -144,6 +145,7 @@ export default function AboutPage() {
           `}
         >
           <p>{config.email}</p>
+
           <p>{config.phone}</p>
 
           <Link
