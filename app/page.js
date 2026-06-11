@@ -26,19 +26,12 @@ className={`sticky top-0 z-50 border-b ${config.theme.headerBg} ${config.theme.h
           </h1>
         </div>
 
-        {config.showNavLinks && (
-          <nav className="hidden md:flex gap-6">
-            {config.headerLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className="text-white hover:text-blue-400 transition"
-              >
-                {link.name}
-              </Link>
-            ))}
-          </nav>
-        )}
+        <Link
+          href={siteConfig.contactPageRoute}
+          className={config.theme.button}
+        >
+          {config.headerButtonText || "Contact Us"}
+        </Link>
       </div>
     </header>
   )}
@@ -88,7 +81,10 @@ className={`sticky top-0 z-50 border-b ${config.theme.headerBg} ${config.theme.h
             <h3 className="text-2xl font-semibold mb-3">
               {title}
             </h3>
-            <p className="text-gray-300">{content}</p>
+
+            <p className="text-gray-300">
+              {content}
+            </p>
           </div>
         ))}
 
@@ -98,6 +94,7 @@ className={`sticky top-0 z-50 border-b ${config.theme.headerBg} ${config.theme.h
           <h3 className="text-2xl font-semibold mb-3">
             Why Choose Us
           </h3>
+
           <p className="text-gray-300">
             {config.whyChooseUs}
           </p>
@@ -112,16 +109,24 @@ className={`sticky top-0 z-50 border-b ${config.theme.headerBg} ${config.theme.h
         Our Work
       </h2>
 
-      <div className="grid md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {config.images.map((img, i) => (
           <img
             key={i}
             src={img}
             alt={`Work ${i + 1}`}
-            className="rounded-2xl shadow-xl hover:scale-105 transition"
+            className="rounded-2xl shadow-xl hover:scale-105 transition duration-300"
           />
         ))}
       </div>
+
+      {config.video && (
+        <video
+          src={config.video}
+          controls
+          className="mt-6 w-full rounded-2xl"
+        />
+      )}
     </section>
 
     <section className={`${config.theme.sectionBg} p-8`}>
@@ -151,14 +156,25 @@ className={`sticky top-0 z-50 border-b ${config.theme.headerBg} ${config.theme.h
           </div>
         ))}
       </div>
+
+      {config.googleReviewsLink && (
+        <a
+          href={config.googleReviewsLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block mt-6 text-blue-400 hover:text-blue-300"
+        >
+          View Google Reviews →
+        </a>
+      )}
     </section>
 
-    <section className="text-center py-16">
-      <h2 className="text-4xl font-bold mb-4">
+    <section className="text-center py-20">
+      <h2 className="text-5xl font-bold mb-4">
         Ready To Transform Your Property?
       </h2>
 
-      <p className="text-gray-400 mb-8">
+      <p className="text-gray-400 mb-8 text-lg">
         Contact JTB Painting today for a free estimate.
       </p>
 
@@ -174,11 +190,16 @@ className={`sticky top-0 z-50 border-b ${config.theme.headerBg} ${config.theme.h
   {siteConfig.showFooter && (
     <footer className="border-t border-blue-500/20 py-8 text-center">
       <p>{config.email}</p>
-      <p>{config.phone}</p>
+
+      {config.phone && (
+        <p className="mt-1">
+          {config.phone}
+        </p>
+      )}
 
       <Link
         href={siteConfig.privacyPageRoute}
-        className="text-blue-400 hover:text-blue-300 mt-3 inline-block"
+        className="inline-block mt-4 text-blue-400 hover:text-blue-300"
       >
         Privacy Policy
       </Link>
