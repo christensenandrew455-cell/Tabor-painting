@@ -138,8 +138,8 @@ export default function ContactPage() {
             />
           )}
 
-          <textarea
-            required
+          {config.showMessageField && (
+            <textarea
             name="message"
             placeholder="Message"
             value={form.message}
