@@ -18,7 +18,6 @@ theme: {
 pageBg: "bg-black",
 pageText: "text-white",
 
-```
 headerBg: "bg-black",
 headerBorder: "border-blue-500/20",
 headerText: "text-white",
@@ -39,7 +38,6 @@ button:
   "bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold transition",
 
 accentText: "text-blue-400",
-```
 
 },
 
