@@ -4,7 +4,7 @@ const config = {
     "Send us a message and we'll get back to you as soon as possible.",
 
   phone: "YOUR PHONE NUMBER",
-  email: "YOUR EMAIL",
+  email: "Taborpainting508@gmail.com",
 
   primaryColor: "blue-600",
   font: "font-sans",
