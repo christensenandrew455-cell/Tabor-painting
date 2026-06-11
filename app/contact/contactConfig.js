@@ -11,9 +11,10 @@ const config = {
 
   // Optional Fields
   showAddressField: false,
-  showSizeField: false,
-  showDateField: false,
-
+  showSizeField: true,
+  showDateField: true,
+  showMessageField: true,
+    
   successMessage: "Message sent successfully!",
   errorMessage:
     "Something went wrong. Please try again.",
