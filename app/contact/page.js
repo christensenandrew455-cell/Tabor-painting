@@ -146,7 +146,7 @@ export default function ContactPage() {
             onChange={handleChange}
             className="border p-3 rounded-lg h-40"
           />
-
+        )}
           <button
             type="submit"
             className="bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition"
