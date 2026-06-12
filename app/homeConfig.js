@@ -1,7 +1,7 @@
 const config = {
 // BUSINESS INFO
 businessName: "Tabor Painting",
-phone: "",
+phone: "(774)-245-3383",
 email: "Taborpainting508@gmail.com",
 
 // LOGO
