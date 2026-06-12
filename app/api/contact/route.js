@@ -1,9 +1,12 @@
 import { Resend } from "resend";
 import emailConfig from "../../contact/emailConfig";
+
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req) {
   try {
+    console.log("=== CONTACT FORM SUBMISSION ===");
+
     const body = await req.json();
 
     const {
@@ -16,7 +19,11 @@ export async function POST(req) {
       message,
     } = body;
 
-    await resend.emails.send({
+    console.log("Recipient:", emailConfig.recipientEmail);
+    console.log("API Key exists:", !!process.env.RESEND_API_KEY);
+    console.log("Sending email to Resend...");
+
+    const result = await resend.emails.send({
       from: "Contact Form <onboarding@resend.dev>",
       to: [emailConfig.recipientEmail],
 
@@ -42,10 +49,16 @@ export async function POST(req) {
       `,
     });
 
+    console.log("Resend result:", JSON.stringify(result, null, 2));
+
     return Response.json({
       success: true,
+      result,
     });
   } catch (error) {
+    console.error("=== EMAIL ERROR ===");
+    console.error(error);
+
     return Response.json(
       {
         success: false,
