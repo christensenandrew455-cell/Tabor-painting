@@ -1,5 +1,5 @@
 const emailConfig = {
-  recipientEmail: "Taborpainting508@gmail.com",
+  recipientEmail: "christensenandrew455@gmail.com",
 };
 
 export default emailConfig;
