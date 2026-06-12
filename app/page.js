@@ -68,7 +68,7 @@ className={`sticky top-0 z-50 border-b ${config.theme.headerBg} ${config.theme.h
 
       <div className="grid md:grid-cols-2 gap-6">
         {[
-          ["Company Story", config.companyStory],
+          ["Our Story", config.companyStory],
           ["Our Mission", config.mission],
           ["What We Do", config.whatWeDo],
           ["Areas We Serve", config.serviceAreas.join(", ")],
