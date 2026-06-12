@@ -153,6 +153,10 @@ export default function ContactPage() {
           >
             Send Message
           </button>
+
+          <p className="text-sm text-gray-500 text-center mt-2">
+            By submitting this form, you agree to be contacted by Tabor Painting regarding your request for services.
+          </p>
         </form>
 
         <div className="mt-10 text-center">
