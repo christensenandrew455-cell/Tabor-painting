@@ -2,8 +2,9 @@ import Link from "next/link";
 
 export default function AboutPage() {
   return (
-    <main className="bg-black text-white min-h-screen p-6 md:p-12">
-      <div className="max-w-6xl mx-auto">
+    <main className="bg-black text-white min-h-screen">
+      <header className="sticky top-0 z-50 border-b border-blue-500/20 bg-black backdrop-blur"><div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"><h1 className="text-2xl font-bold text-blue-400">Tabor Painting</h1><div className="hidden md:flex items-center gap-6"><Link href="/" className="font-medium hover:opacity-80">Home</Link><Link href="/services" className="font-medium hover:opacity-80">Services</Link><Link href="/about" className="font-medium hover:opacity-80">About Us</Link><Link href="/contact" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold transition">Contact Us</Link></div><div className="md:hidden"><Link href="/contact" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold transition">Contact Us</Link></div></div></header>
+      <div className="max-w-6xl mx-auto p-6 md:p-12">
         <h1 className="text-4xl md:text-6xl font-bold mb-8 text-center text-blue-400">About Tabor Painting</h1>
         <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto text-center mb-10 leading-relaxed">Learn more about Tabor Painting, our mission, and the quality workmanship behind every project.</p>
         <div className="space-y-6">
@@ -36,7 +37,7 @@ export default function AboutPage() {
           <Link href="/contact" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold transition">contact us</Link>
         </div>
       </div>
-      <footer className="border-t border-blue-500/20 py-8 text-center mt-12">
+      <footer className="border-t border-blue-500/20 py-8 text-center px-4">
         <p>Taborpainting508@gmail.com</p>
         <p className="mt-1">(774)-245-3383</p>
         <p className="mt-4 text-sm font-semibold text-gray-500">Made and managed by <a href="https://arc-websites.vercel.app" target="_blank" rel="noopener noreferrer" className="text-blue-400 underline hover:text-blue-300">ARK Websites</a></p>
