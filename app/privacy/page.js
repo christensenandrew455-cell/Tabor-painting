@@ -57,7 +57,7 @@ Privacy Policy </h1>
 
     <p>
       If you have questions regarding this Privacy
-      Policy, please contact Taborpainting508@gmail.com.
+      Policy, please contact Christensenandrew455@gmail.com.
     </p>
   </div></div>
   <footer className="border-t border-blue-500/20 py-8 text-center px-4 text-black">
