@@ -15,6 +15,12 @@ const siteConfig = {
   // CONTACT PAGE
   contactPageRoute: "/contact",
 
+  // ABOUT PAGE
+  aboutPageRoute: "/about",
+
+  // SERVICES PAGE
+  servicesPageRoute: "/services",
+
   // PRIVACY PAGE
   privacyPageRoute: "/privacy",
 };
