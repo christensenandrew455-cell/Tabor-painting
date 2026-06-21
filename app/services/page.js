@@ -28,6 +28,12 @@ export default function ServicesPage() {
           <Link href={siteConfig.contactPageRoute} className={config.theme.button}>{servicesConfig.contactButtonText}</Link>
         </section>
       </div>
+      <footer className="border-t border-blue-500/20 py-8 text-center px-4">
+        <p>{config.email}</p>
+        {config.phone && <p className="mt-1">{config.phone}</p>}
+        <p className="mt-4 text-sm font-semibold text-gray-500">Made and managed by <a href="https://arc-websites.vercel.app" target="_blank" rel="noopener noreferrer" className="text-blue-400 underline hover:text-blue-300">ARK Websites</a></p>
+        <Link href={siteConfig.privacyPageRoute} className="inline-block mt-4 text-blue-400 hover:text-blue-300">Privacy Policy</Link>
+      </footer>
     </main>
   );
 }
