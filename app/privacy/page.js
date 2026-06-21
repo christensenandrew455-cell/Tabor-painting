@@ -57,18 +57,15 @@ Privacy Policy </h1>
 
     <p>
       If you have questions regarding this Privacy
-      Policy, please contact Christensenandrew455@gmail.com.
+      Policy, please contact Taborpainting508@gmail.com.
     </p>
-
-    <div className="mt-10 text-center">
-      <Link
-        href="/"
-        className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition"
-      >
-        Return Home
-      </Link>
-    </div>
   </div>
+  <footer className="border-t border-blue-500/20 py-8 text-center px-4 mt-10 text-black">
+    <p>Taborpainting508@gmail.com</p>
+    <p className="mt-1">(774)-245-3383</p>
+    <p className="mt-4 text-sm font-semibold text-gray-500">Made and managed by <a href="https://arc-websites.vercel.app" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline hover:text-blue-700">ARK Websites</a></p>
+    <Link href="/" className="inline-block mt-4 text-blue-600 hover:text-blue-700">Home</Link>
+  </footer>
 </main>
 );
 }
