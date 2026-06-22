@@ -29,7 +29,7 @@ export default function ContactPage() {
 
   return (
     <main className="bg-gray-100 min-h-screen">
-      <header className="sticky top-0 z-50 border-b border-blue-500/20 bg-white/95 backdrop-blur"><div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"><h1 className="text-2xl font-bold text-blue-600">Tabor Painting</h1><div className="hidden md:flex items-center gap-6"><Link href="/" className="font-medium hover:opacity-80">Home</Link><Link href="/services" className="font-medium hover:opacity-80">Services</Link><Link href="/about" className="font-medium hover:opacity-80">About Us</Link><Link href="/contact" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold transition">Contact Us</Link></div><div className="md:hidden"><Link href="/contact" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold transition">Contact Us</Link></div></div></header>
+      <header className="sticky top-0 z-50 border-b border-yellow-600/30 bg-white/95 backdrop-blur"><div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"><h1 className="text-2xl font-bold text-yellow-700">Tabor Painting</h1><div className="hidden md:flex items-center gap-6"><Link href="/" className="font-medium hover:opacity-80">Home</Link><Link href="/services" className="font-medium hover:opacity-80">Services</Link><Link href="/about" className="font-medium hover:opacity-80">About Us</Link><Link href="/contact" className="bg-black hover:bg-yellow-700 text-white px-8 py-4 rounded-xl font-semibold transition">Contact Us</Link></div><div className="md:hidden"><Link href="/contact" className="bg-black hover:bg-yellow-700 text-white px-8 py-4 rounded-xl font-semibold transition">Contact Us</Link></div></div></header>
       <div className="py-10 px-4">
         <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-lg p-8 md:p-12">
           <h1 className="text-4xl font-bold mb-3">{config.pageTitle}</h1>
@@ -46,16 +46,16 @@ export default function ContactPage() {
             {config.showSizeField && <input name="size" placeholder="Size of job" value={form.size} onChange={handleChange} className="border p-3 rounded-lg" />}
             {config.showDateField && <input name="date" placeholder="Date when available" value={form.date} onChange={handleChange} className="border p-3 rounded-lg" />}
             {config.showMessageField && <textarea name="message" placeholder="Message" value={form.message} onChange={handleChange} className="border p-3 rounded-lg h-40" />}
-            <button type="submit" className="bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition">Send Message</button>
+            <button type="submit" className="bg-black text-white py-3 rounded-lg hover:bg-yellow-700 transition">Send Message</button>
             <p className="text-sm text-gray-500 text-center mt-2">By submitting this form, you agree to be contacted by Tabor Painting regarding your request for services.</p>
           </form>
         </div>
       </div>
-      <footer className="border-t border-blue-500/20 py-8 text-center px-4 text-black">
+      <footer className="border-t border-yellow-600/30 py-8 text-center px-4 text-black">
         <p>{config.email}</p>
         {config.phone && <p className="mt-1">{config.phone}</p>}
-        <p className="mt-4 text-sm font-semibold text-gray-500">Made and managed by <a href="https://arc-websites.vercel.app" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline hover:text-blue-700">ARK Websites</a></p>
-        <Link href="/privacy" className="inline-block mt-4 text-blue-600 hover:text-blue-700">Privacy Policy</Link>
+        <p className="mt-4 text-sm font-semibold text-gray-500">Made and managed by <a href="https://arc-websites.vercel.app" target="_blank" rel="noopener noreferrer" className="text-yellow-700 underline hover:text-black">ARK Websites</a></p>
+        <Link href="/privacy" className="inline-block mt-4 text-yellow-700 hover:text-black">Privacy Policy</Link>
       </footer>
     </main>
   );
