@@ -13,29 +13,29 @@ contactButtonText: "contact us",
 
 // THEME
 theme: {
-pageBg: "bg-black",
-pageText: "text-white",
+pageBg: "bg-white",
+pageText: "text-black",
 
-headerBg: "bg-black",
-headerBorder: "border-blue-500/20",
-headerText: "text-white",
+headerBg: "bg-white",
+headerBorder: "border-yellow-600/30",
+headerText: "text-black",
 
 heroBg:
-  "bg-gradient-to-br from-black via-gray-950 to-blue-950",
+  "bg-gradient-to-br from-white via-yellow-50 to-yellow-100",
 
 sectionBg:
-  "bg-gray-900 border border-blue-500/20 rounded-3xl shadow-2xl",
+  "bg-white border border-yellow-600/30 rounded-3xl shadow-2xl",
 
 cardBg:
-  "bg-black border border-blue-500/20 rounded-2xl shadow-lg hover:border-blue-500 transition-all",
+  "bg-white border border-yellow-600/30 rounded-2xl shadow-lg hover:border-yellow-600 transition-all",
 
 testimonialBg:
-  "bg-black border border-blue-500/20 rounded-2xl",
+  "bg-white border border-yellow-600/30 rounded-2xl shadow-lg",
 
 button:
-  "bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold transition",
+  "bg-black hover:bg-yellow-700 text-white px-8 py-4 rounded-xl font-semibold transition",
 
-accentText: "text-blue-400",
+accentText: "text-yellow-700",
 
 },
 
