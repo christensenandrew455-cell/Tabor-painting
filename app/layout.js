@@ -1,6 +1,7 @@
 import "/globals.css";
 
 export const metadata = {
+  metadataBase: new URL("https://www.taborpainting.com"),
   title: "Tabor Painting | Interior & Exterior Painter in Berlin MA",
   description:
     "Tabor Painting provides interior painting, exterior painting, and wood staining services for homeowners in Berlin, Massachusetts and nearby Central MA towns.",
@@ -13,10 +14,15 @@ export const metadata = {
     "wood staining Berlin MA",
     "house painter Berlin Massachusetts",
   ],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Tabor Painting | Painter in Berlin MA",
     description:
       "Interior painting, exterior painting, and wood staining services in Berlin, Massachusetts and nearby areas.",
+    url: "https://www.taborpainting.com/",
+    siteName: "Tabor Painting",
     type: "website",
   },
 };
