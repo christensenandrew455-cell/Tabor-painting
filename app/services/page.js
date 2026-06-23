@@ -2,11 +2,12 @@ import Link from "next/link";
 import config from "../homeConfig";
 import siteConfig from "../siteConfig";
 import servicesConfig from "../servicesConfig";
+import SiteHeader from "../components/SiteHeader";
 
 export default function ServicesPage() {
   return (
     <main className={`${config.font} ${config.theme.pageBg} ${config.theme.pageText}`}>
-      <header className={`sticky top-0 z-50 border-b ${config.theme.headerBg} ${config.theme.headerBorder} backdrop-blur`}><div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"><h1 className={`text-2xl font-bold ${config.theme.accentText}`}>{config.businessName}</h1><div className="hidden md:flex items-center gap-6"><Link href="/" className="font-medium hover:opacity-80">Home</Link><Link href="/services" className="font-medium hover:opacity-80">Services</Link><Link href="/about" className="font-medium hover:opacity-80">About Us</Link><Link href={siteConfig.contactPageRoute} className={config.theme.button}>{config.headerButtonText || "Contact Us"}</Link></div><div className="md:hidden"><Link href={siteConfig.contactPageRoute} className={config.theme.button}>{config.headerButtonText || "Contact Us"}</Link></div></div></header>
+      {siteConfig.showHeader && <SiteHeader />}
       <div className="max-w-7xl mx-auto p-4 md:p-12">
         <div className="text-center mb-10 md:mb-20">
           <h1 className="text-4xl md:text-6xl font-bold mb-5 md:mb-6 leading-tight">{servicesConfig.pageTitle}</h1>
