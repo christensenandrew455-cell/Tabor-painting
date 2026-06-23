@@ -8,13 +8,13 @@ function LogoMark() {
       <img
         src={config.logoUrl}
         alt={config.businessName}
-        className="h-11 w-auto object-contain"
+        className="h-11 w-11 rounded-full object-cover shadow-sm ring-1 ring-yellow-600/30"
       />
     );
   }
 
   return (
-    <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-black text-sm font-extrabold tracking-tight text-white shadow-md ring-1 ring-yellow-600/30">
+    <span className="flex h-11 w-11 items-center justify-center rounded-full bg-black text-sm font-extrabold tracking-tight text-white shadow-md ring-1 ring-yellow-600/30">
       TP
     </span>
   );
@@ -34,7 +34,7 @@ export default function SiteHeader() {
             <img
               src={config.logoUrl}
               alt={config.businessName}
-              className="h-12 w-auto object-contain"
+              className="h-12 w-12 rounded-full object-cover shadow-sm ring-1 ring-yellow-600/30"
             />
           )}
 
