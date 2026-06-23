@@ -65,7 +65,7 @@ mission:
 "To provide professional, high-quality painting services with excellent workmanship, reliable communication, and customer satisfaction on every project.",
 
 whatWeDo:
-"JTB Painting specializes in delivering high-quality painting services with precision strokes, attention to detail, and lasting results that enhance the beauty of every property.",
+"Tabor Painting specializes in delivering high-quality painting services with precision strokes, attention to detail, and lasting results that enhance the beauty of every property.",
 
 whyChooseUs:
 "We deliver exceptional painting results, complete projects on time, and treat every property with the care and attention it deserves.",
