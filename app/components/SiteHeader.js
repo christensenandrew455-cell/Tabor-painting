@@ -5,16 +5,18 @@ import siteConfig from "../siteConfig";
 function LogoMark() {
   if (config.showLogo && config.logoUrl) {
     return (
-      <img
-        src={config.logoUrl}
-        alt={config.businessName}
-        className="h-11 w-11 rounded-full object-cover shadow-sm ring-1 ring-yellow-600/30"
-      />
+      <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-sm ring-1 ring-yellow-600/30 overflow-hidden">
+        <img
+          src={config.logoUrl}
+          alt={config.businessName}
+          className="h-10 w-10 object-contain"
+        />
+      </span>
     );
   }
 
   return (
-    <span className="flex h-11 w-11 items-center justify-center rounded-full bg-black text-sm font-extrabold tracking-tight text-white shadow-md ring-1 ring-yellow-600/30">
+    <span className="flex h-12 w-12 items-center justify-center rounded-full bg-black text-sm font-extrabold tracking-tight text-white shadow-md ring-1 ring-yellow-600/30">
       TP
     </span>
   );
@@ -31,11 +33,13 @@ export default function SiteHeader() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-6 md:py-4">
         <Link href="/" className="hidden items-center gap-3 md:flex">
           {config.showLogo && config.logoUrl && (
-            <img
-              src={config.logoUrl}
-              alt={config.businessName}
-              className="h-12 w-12 rounded-full object-cover shadow-sm ring-1 ring-yellow-600/30"
-            />
+            <span className="flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-sm ring-1 ring-yellow-600/30 overflow-hidden">
+              <img
+                src={config.logoUrl}
+                alt={config.businessName}
+                className="h-12 w-12 object-contain"
+              />
+            </span>
           )}
 
           <h1 className={`text-2xl font-bold ${config.theme.accentText}`}>
