@@ -1,9 +1,10 @@
 import Link from "next/link";
+import SiteHeader from "../components/SiteHeader";
 
 export default function AboutPage() {
   return (
     <main className="bg-white text-black min-h-screen">
-      <header className="sticky top-0 z-50 border-b border-yellow-600/30 bg-white backdrop-blur"><div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"><h1 className="text-2xl font-bold text-yellow-700">Tabor Painting</h1><div className="hidden md:flex items-center gap-6"><Link href="/" className="font-medium hover:opacity-80">Home</Link><Link href="/services" className="font-medium hover:opacity-80">Services</Link><Link href="/about" className="font-medium hover:opacity-80">About Us</Link><Link href="/contact" className="bg-black hover:bg-yellow-700 text-white px-8 py-4 rounded-xl font-semibold transition">Contact Us</Link></div><div className="md:hidden"><Link href="/contact" className="bg-black hover:bg-yellow-700 text-white px-8 py-4 rounded-xl font-semibold transition">Contact Us</Link></div></div></header>
+      <SiteHeader />
       <div className="max-w-6xl mx-auto p-6 md:p-12">
         <h1 className="text-4xl md:text-6xl font-bold mb-8 text-center text-yellow-700">About Tabor Painting</h1>
         <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto text-center mb-10 leading-relaxed">Learn more about Tabor Painting, our mission, and the quality workmanship behind every project.</p>
