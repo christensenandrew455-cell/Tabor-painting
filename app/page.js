@@ -1,6 +1,7 @@
 import Link from "next/link";
 import config from "./homeConfig";
 import siteConfig from "./siteConfig";
+import SiteHeader from "./components/SiteHeader";
 
 export default function Home() {
 const socials = ["Facebook", "Instagram", "TikTok", "YouTube"];
@@ -13,7 +14,7 @@ const faqItems = [
 
 return (
 <main className={`${config.font} ${config.theme.pageBg} ${config.theme.pageText}`}>
-  {siteConfig.showHeader && <header className={`sticky top-0 z-50 border-b ${config.theme.headerBg} ${config.theme.headerBorder} backdrop-blur`}><div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"><h1 className={`text-2xl font-bold ${config.theme.accentText}`}>{config.businessName}</h1><div className="hidden md:flex items-center gap-6"><Link href="/" className="font-medium hover:opacity-80">Home</Link><Link href="/services" className="font-medium hover:opacity-80">Services</Link><Link href="/about" className="font-medium hover:opacity-80">About Us</Link><Link href={siteConfig.contactPageRoute} className={config.theme.button}>{config.headerButtonText || "Contact Us"}</Link></div><div className="md:hidden"><Link href={siteConfig.contactPageRoute} className={config.theme.button}>{config.headerButtonText || "Contact Us"}</Link></div></div></header>}
+  {siteConfig.showHeader && <SiteHeader />}
 
   <section className={`min-h-screen flex items-center justify-center text-center px-6 ${config.theme.heroBg}`}>
     <div><h1 className="text-6xl md:text-8xl font-extrabold mb-6">{config.heroTitle}</h1><p className="text-xl md:text-2xl max-w-3xl mx-auto text-gray-700">{config.heroSubtitle}</p><Link href={siteConfig.contactPageRoute} className={`inline-block mt-10 ${config.theme.button}`}>{config.contactButtonText}</Link></div>
