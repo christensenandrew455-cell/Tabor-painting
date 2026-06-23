@@ -2,37 +2,30 @@ const servicesConfig = {
   pageTitle: "Our Services",
 
   pageSubtitle:
-    "Professional painting services focused on clean results, reliable communication, and quality workmanship.",
+    "Tabor Painting offers interior painting, exterior painting, and wood staining for homeowners in Berlin, Massachusetts and nearby areas.",
 
   contactButtonText: "contact us",
 
   services: [
     {
-      title: "Professional Painting",
+      title: "Interior Painting",
       image: "https://via.placeholder.com/600x400",
       description:
-        "Tabor Painting provides high-quality painting services with precision strokes, attention to detail, and lasting results that enhance the beauty of every property.",
+        "Refresh the inside of your home with clean, professional interior painting. Tabor Painting handles walls, rooms, trim, doors, touch-ups, and repainting with careful prep, neat work areas, smooth coverage, and sharp lines.",
     },
 
     {
-      title: "Residential Painting",
+      title: "Exterior Painting",
       image: "https://via.placeholder.com/600x400",
       description:
-        "We help homeowners improve their spaces with careful prep work, clean lines, and a professional finish that makes each room or property feel refreshed.",
+        "Improve curb appeal and protect your home with exterior painting services. We focus on proper surface preparation, clean coverage, and a finished look that helps your property stand out in Berlin MA and nearby communities.",
     },
 
     {
-      title: "Reliable Project Communication",
+      title: "Wood Staining",
       image: "https://via.placeholder.com/600x400",
       description:
-        "We focus on reliable communication from start to finish so customers know what to expect and feel confident throughout the project.",
-    },
-
-    {
-      title: "Quality Workmanship",
-      image: "https://via.placeholder.com/600x400",
-      description:
-        "Every project is handled with care, attention, and respect for the property so the finished result looks clean, professional, and built to last.",
+        "Bring out the natural look of wood while helping protect it with professional wood staining. Tabor Painting provides staining for wood surfaces that need a clean, refreshed, and finished appearance.",
     },
   ],
 };
