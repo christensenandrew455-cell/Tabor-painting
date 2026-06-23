@@ -53,22 +53,22 @@ font: "font-sans",
 // HERO
 heroTitle: "Tabor Painting",
 heroSubtitle:
-"Precision in Every Stroke. Excellence in Every Project.",
+"Professional interior and exterior painting in Berlin, Massachusetts, built on clean prep, smooth finishes, and dependable service.",
 heroUseImage: false,
 heroImage: "",
 
 // ABOUT
 companyStory:
-"Founded by Jason Beirne after working with Student Painters, Tabor Painting was built on hard work, quality craftsmanship, and a commitment to delivering outstanding results.",
+"Tabor Painting is a local painting company based in Berlin, Massachusetts, founded by Jason Beirne after gaining hands-on experience with Student Painters. The company was built around honest work, careful preparation, and professional painting results that homeowners can feel confident in. From single-room interior painting to full exterior painting projects, Tabor Painting brings reliable service and strong attention to detail to homes throughout Berlin MA and nearby Central Massachusetts communities.",
 
 mission:
-"To provide professional, high-quality painting services with excellent workmanship, reliable communication, and customer satisfaction on every project.",
+"Our mission is to be a trusted painter in Berlin, MA by providing high-quality interior painting, exterior painting, and residential painting services with clear communication from start to finish. Every project is handled with respect for the property, a focus on clean workmanship, and a commitment to creating a finished look that lasts. Tabor Painting wants every customer to feel comfortable, informed, and proud of the final result.",
 
 whatWeDo:
-"Tabor Painting specializes in delivering high-quality painting services with precision strokes, attention to detail, and lasting results that enhance the beauty of every property.",
+"Tabor Painting provides professional painting services for homeowners who want clean lines, smooth coverage, better curb appeal, and a refreshed home. Our work includes interior painting in Berlin MA, exterior painting in Berlin MA, wall painting, trim painting, touch-ups, repainting, and detail-focused prep work. Whether the project is a bedroom, living room, kitchen, hallway, porch, siding, or exterior surface, we focus on quality craftsmanship and dependable results.",
 
 whyChooseUs:
-"We deliver exceptional painting results, complete projects on time, and treat every property with the care and attention it deserves.",
+"Homeowners looking for the best painter in Berlin, Massachusetts want someone who shows up, communicates clearly, protects the property, and takes pride in the details. Tabor Painting focuses on careful prep, neat work areas, clean edges, smooth finishes, and reliable timelines. We treat every painting project like it matters because the finished result affects how your home looks, feels, and presents itself every day.",
 
 serviceAreas: ["All of Massachusetts"],
 
