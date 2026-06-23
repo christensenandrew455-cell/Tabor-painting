@@ -1,7 +1,8 @@
 import Link from "next/link";
+import SiteHeader from "../components/SiteHeader";
 
 export default function PrivacyPolicy() {
-return ( <main className="bg-gray-100 min-h-screen"> <header className="sticky top-0 z-50 border-b border-yellow-600/30 bg-white/95 backdrop-blur"><div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"><h1 className="text-2xl font-bold text-yellow-700">Tabor Painting</h1><div className="hidden md:flex items-center gap-6"><Link href="/" className="font-medium hover:opacity-80">Home</Link><Link href="/services" className="font-medium hover:opacity-80">Services</Link><Link href="/about" className="font-medium hover:opacity-80">About Us</Link><Link href="/contact" className="bg-black hover:bg-yellow-700 text-white px-8 py-4 rounded-xl font-semibold transition">Contact Us</Link></div><div className="md:hidden"><Link href="/contact" className="bg-black hover:bg-yellow-700 text-white px-8 py-4 rounded-xl font-semibold transition">Contact Us</Link></div></div></header> <div className="py-10 px-4"><div className="max-w-4xl mx-auto bg-white shadow-lg rounded-lg p-8 md:p-12"> <h1 className="text-4xl font-bold mb-6">
+return ( <main className="bg-gray-100 min-h-screen"> <SiteHeader /> <div className="py-10 px-4"><div className="max-w-4xl mx-auto bg-white shadow-lg rounded-lg p-8 md:p-12"> <h1 className="text-4xl font-bold mb-6">
 Privacy Policy </h1>
 
     <p className="mb-4">
