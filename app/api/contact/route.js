@@ -28,31 +28,55 @@ async function sendToArkOcm({ firstName, lastName, contact, address, size, date,
     .filter(Boolean)
     .join("\n");
 
+  const payload = {
+    clientId: "tabor-painting",
+    section: "preClients",
+    name: `${firstName || ""} ${lastName || ""}`.trim(),
+    phone,
+    email,
+    address,
+    service: "Painting estimate request",
+    message: notes,
+    source: "taborpainting-website",
+  };
+
   try {
     const response = await fetch(ocmWebhookUrl, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        clientId: "tabor-painting",
-        section: "preClients",
-        name: `${firstName || ""} ${lastName || ""}`.trim(),
-        phone,
-        email,
-        address,
-        service: "Painting estimate request",
-        message: notes,
-        source: "taborpainting-website",
-      }),
+      body: JSON.stringify(payload),
     });
 
-    if (!response.ok) {
-      const errorText = await response.text();
-      console.error("ARK OCM webhook error:", errorText);
+    const responseText = await response.text();
+    let responseBody = responseText;
+
+    try {
+      responseBody = JSON.parse(responseText);
+    } catch {
+      // Keep plain text response when it is not JSON.
     }
+
+    if (!response.ok) {
+      console.error("ARK OCM webhook error:", responseBody);
+    }
+
+    return {
+      success: response.ok,
+      status: response.status,
+      url: ocmWebhookUrl,
+      response: responseBody,
+    };
   } catch (error) {
     console.error("Could not send submission to ARK OCM:", error);
+
+    return {
+      success: false,
+      status: "fetch-failed",
+      url: ocmWebhookUrl,
+      error: error.message,
+    };
   }
 }
 
@@ -102,7 +126,7 @@ export async function POST(req) {
       `,
     });
 
-    await sendToArkOcm({
+    const ocmResult = await sendToArkOcm({
       firstName,
       lastName,
       contact,
@@ -113,10 +137,12 @@ export async function POST(req) {
     });
 
     console.log("Resend result:", JSON.stringify(result, null, 2));
+    console.log("ARK OCM result:", JSON.stringify(ocmResult, null, 2));
 
     return Response.json({
       success: true,
       result,
+      ocmResult,
     });
   } catch (error) {
     console.error("=== EMAIL ERROR ===");
