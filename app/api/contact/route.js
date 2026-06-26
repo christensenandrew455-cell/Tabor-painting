@@ -5,7 +5,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 const ocmWebhookUrl =
   process.env.OCM_WEBHOOK_URL ||
-  "https://ark-websites-ocm.vercel.app/api/submissions";
+  "https://ark-websites-ocm.vercel.app/api/intake";
 
 function cleanText(value) {
   return String(value || "").trim();
@@ -14,7 +14,7 @@ function cleanText(value) {
 async function sendToArkOcm({ fullName, phone, email, address, jobType, notes }) {
   const payload = {
     clientId: "tabor-painting",
-    section: "preClients",
+    sectionKey: "contactedMe",
     Name: cleanText(fullName),
     Phone: cleanText(phone),
     Email: cleanText(email),
