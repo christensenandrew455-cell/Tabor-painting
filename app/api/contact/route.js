@@ -7,36 +7,20 @@ const ocmWebhookUrl =
   process.env.OCM_WEBHOOK_URL ||
   "https://ark-websites-ocm.vercel.app/api/submissions";
 
-function splitContact(contact) {
-  const value = String(contact || "").trim();
-
-  if (value.includes("@")) {
-    return { email: value, phone: "" };
-  }
-
-  return { email: "", phone: value };
+function cleanText(value) {
+  return String(value || "").trim();
 }
 
-async function sendToArkOcm({ firstName, lastName, contact, address, size, date, message }) {
-  const { email, phone } = splitContact(contact);
-
-  const notes = [
-    size ? `Size of job: ${size}` : "",
-    date ? `Date available: ${date}` : "",
-    message ? `Message: ${message}` : "",
-  ]
-    .filter(Boolean)
-    .join("\n");
-
+async function sendToArkOcm({ fullName, phone, email, address, jobType, notes }) {
   const payload = {
     clientId: "tabor-painting",
     section: "preClients",
-    name: `${firstName || ""} ${lastName || ""}`.trim(),
-    phone,
-    email,
-    address,
-    service: "Painting estimate request",
-    message: notes,
+    Name: cleanText(fullName),
+    Phone: cleanText(phone),
+    Email: cleanText(email),
+    Address: cleanText(address),
+    Job: cleanText(jobType),
+    Notes: cleanText(notes),
     source: "taborpainting-website",
   };
 
@@ -86,15 +70,12 @@ export async function POST(req) {
 
     const body = await req.json();
 
-    const {
-      firstName,
-      lastName,
-      contact,
-      address,
-      size,
-      date,
-      message,
-    } = body;
+    const fullName = cleanText(body.fullName || body.name || `${body.firstName || ""} ${body.lastName || ""}`);
+    const phone = cleanText(body.phone || body.phoneNumber || body.contact);
+    const email = cleanText(body.email);
+    const address = cleanText(body.address);
+    const jobType = cleanText(body.jobType || body.job || body.service);
+    const notes = cleanText(body.notes || body.message);
 
     console.log("Recipient:", emailConfig.recipientEmail);
     console.log("API Key exists:", !!process.env.RESEND_API_KEY);
@@ -104,17 +85,17 @@ export async function POST(req) {
       from: "Contact Form <onboarding@resend.dev>",
       to: [emailConfig.recipientEmail],
 
-      subject: `New Contact Form Submission from ${firstName} ${lastName}`,
+      subject: `New Contact Form Submission from ${fullName}`,
 
       html: `
         <h2>New Contact Form Submission</h2>
 
-        <p><b>Name:</b> ${firstName} ${lastName}</p>
-        <p><b>Contact:</b> ${contact}</p>
+        <p><b>Name:</b> ${fullName}</p>
+        <p><b>Phone:</b> ${phone || "N/A"}</p>
+        <p><b>Email:</b> ${email || "N/A"}</p>
         <p><b>Address:</b> ${address || "N/A"}</p>
-        <p><b>Size:</b> ${size || "N/A"}</p>
-        <p><b>Date:</b> ${date || "N/A"}</p>
-        <p><b>Message:</b> ${message || "N/A"}</p>
+        <p><b>Job Type:</b> ${jobType || "N/A"}</p>
+        <p><b>Notes:</b> ${notes || "N/A"}</p>
 
         <hr />
 
@@ -127,13 +108,12 @@ export async function POST(req) {
     });
 
     const ocmResult = await sendToArkOcm({
-      firstName,
-      lastName,
-      contact,
+      fullName,
+      phone,
+      email,
       address,
-      size,
-      date,
-      message,
+      jobType,
+      notes,
     });
 
     console.log("Resend result:", JSON.stringify(result, null, 2));
@@ -145,7 +125,7 @@ export async function POST(req) {
       ocmResult,
     });
   } catch (error) {
-    console.error("=== EMAIL ERROR ===");
+    console.error("=== CONTACT FORM ERROR ===");
     console.error(error);
 
     return Response.json(
