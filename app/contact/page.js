@@ -5,8 +5,17 @@ import Link from "next/link";
 import config from "./contactConfig";
 import SiteHeader from "../components/SiteHeader";
 
+const emptyForm = {
+  fullName: "",
+  phone: "",
+  email: "",
+  address: "",
+  jobType: "",
+  notes: "",
+};
+
 export default function ContactPage() {
-  const [form, setForm] = useState({ firstName: "", lastName: "", contact: "", address: "", size: "", date: "", message: "" });
+  const [form, setForm] = useState(emptyForm);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -14,12 +23,19 @@ export default function ContactPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     try {
-      const res = await fetch("/api/contact", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(form) });
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
       const data = await res.json();
+
       if (data.success) {
         alert(config.successMessage);
-        setForm({ firstName: "", lastName: "", contact: "", address: "", size: "", date: "", message: "" });
+        setForm(emptyForm);
       } else {
         alert(config.errorMessage);
       }
@@ -39,14 +55,14 @@ export default function ContactPage() {
             <p><strong>Phone:</strong> {config.phone}</p>
             <p><strong>Email:</strong> {config.email}</p>
           </div>
+
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-            <input required name="firstName" placeholder="First Name" value={form.firstName} onChange={handleChange} className="border p-3 rounded-lg" />
-            <input required name="lastName" placeholder="Last Name" value={form.lastName} onChange={handleChange} className="border p-3 rounded-lg" />
-            <input required name="contact" placeholder="Email or Phone" value={form.contact} onChange={handleChange} className="border p-3 rounded-lg" />
-            {config.showAddressField && <input name="address" placeholder="Address" value={form.address} onChange={handleChange} className="border p-3 rounded-lg" />}
-            {config.showSizeField && <input name="size" placeholder="Size of job" value={form.size} onChange={handleChange} className="border p-3 rounded-lg" />}
-            {config.showDateField && <input name="date" placeholder="Date when available" value={form.date} onChange={handleChange} className="border p-3 rounded-lg" />}
-            {config.showMessageField && <textarea name="message" placeholder="Message" value={form.message} onChange={handleChange} className="border p-3 rounded-lg h-40" />}
+            <input required name="fullName" placeholder="Full Name" value={form.fullName} onChange={handleChange} className="border p-3 rounded-lg" />
+            <input required name="phone" placeholder="Phone Number" value={form.phone} onChange={handleChange} className="border p-3 rounded-lg" />
+            <input name="email" type="email" placeholder="Email" value={form.email} onChange={handleChange} className="border p-3 rounded-lg" />
+            <input name="address" placeholder="Address" value={form.address} onChange={handleChange} className="border p-3 rounded-lg" />
+            <input required name="jobType" placeholder="Job Type" value={form.jobType} onChange={handleChange} className="border p-3 rounded-lg" />
+            <textarea name="notes" placeholder="Notes" value={form.notes} onChange={handleChange} className="border p-3 rounded-lg h-40" />
             <button type="submit" className="bg-black text-white py-3 rounded-lg hover:bg-yellow-700 transition">Send Message</button>
             <p className="text-sm text-gray-500 text-center mt-2">By submitting this form, you agree to be contacted by Tabor Painting regarding your request for services.</p>
           </form>
