@@ -1,4 +1,5 @@
 import "/globals.css";
+import PageViewTracker from "./components/PageViewTracker";
 
 export const metadata = {
   metadataBase: new URL("https://www.taborpainting.com"),
@@ -30,7 +31,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <PageViewTracker />
+        {children}
+      </body>
     </html>
   );
 }
